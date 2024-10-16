@@ -72,9 +72,9 @@ const run = async () => {
         accessSecret: TWITTER_ACCESS_TOKEN_SECRET
     })
 
-    const tweetGeneratorTemplate = loadTemplate('tweet_generator.hbs')
     const tweetTemplate = loadTemplate('tweet.hbs')
-    const tweetHashtagsGeneratorTemplate = loadTemplate('tweet_hashtags_generator.hbs')
+    const tweetGeneratorTemplate = loadTemplate('tweet_generator.prompt.hbs')
+    const tweetHashtagsGeneratorTemplate = loadTemplate('tweet_hashtags_generator.prompt.hbs')
 
     l.star('Generating tweet...')
 
