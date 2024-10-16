@@ -18,6 +18,8 @@ const getEnvVar = async (key: string, promptMessage: string): Promise<string> =>
 const l = new Signale({ scope: 'index' })
 
 const run = async () => {
+    l.star(`Started at ${new Date().toISOString()}`)
+
     const db = await loadDB()
     const { lastTweetedAtMs = 0 } = db
     const MIN_TWEET_INTERVAL_MS = await getEnvVar('MIN_TWEET_INTERVAL_MS', 'Enter the minimum tweet interval in milliseconds:')
