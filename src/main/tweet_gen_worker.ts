@@ -18,7 +18,9 @@ const getEnvVar = async (key: string, promptMessage: string): Promise<string> =>
 const l = new Signale({ scope: 'index' })
 
 const run = async () => {
-    l.star(`Started at ${new Date().toISOString()}`)
+    const WORKER_CONFIG_PATH = await getEnvVar('WORKER_CONFIG_PATH', 'Enter the worker config file path:')
+
+    l.star(`Started at ${new Date().toISOString()}: ${WORKER_CONFIG_PATH}`)
 
     const db = await loadDB()
     const { lastTweetedAtMs = 0 } = db
@@ -30,7 +32,6 @@ const run = async () => {
         return
     }
 
-    const WORKER_CONFIG_PATH = await getEnvVar('WORKER_CONFIG_PATH', 'Enter the worker config file path:')
     let workerConfigJSON: string
     try {
         workerConfigJSON = await fs.readFile(WORKER_CONFIG_PATH, 'utf-8')
@@ -89,6 +90,39 @@ const run = async () => {
     await twitterClient.v2.tweet(finalTweetContent)
     db.lastTweetedAtMs = Date.now()
     await saveDB(db)
+
+    l.star('Subscribing to live tweet firehose...')
+
+    const stream = await twitterClient.v2.searchStream({
+        'tweet.fields': ['author_id', 'conversation_id', 'created_at', 'text'],
+        expansions: ['author_id']
+    })
+
+    stream.autoReconnect = true
+
+    stream.on(ETwitterStreamEvent.Data, async (tweet) => {
+        const { data } = tweet
+        const { text, author_id } = data
+
+        // Define your heuristic to determine if a tweet is desirable
+        const isDesirable = (text: string): boolean => {
+            // Example heuristic: reply to tweets containing the word "hello"
+            return text.toLowerCase().includes('hello')
+        }
+
+        if (isDesirable(text)) {
+            l.star(`Desirable tweet found from user ${author_id}: ${text}`)
+
+            const replyContent = await callOpenAiApi(tweetGeneratorTemplate({ accountInformation: ACCOUNT_INFORMATION, instructions: `Reply to the tweet: "${text}"` }), 'gpt-4o-mini')
+
+            await twitterClient.v2.reply(replyContent, data.id)
+            l.star(`Replied to tweet ${data.id} with: ${replyContent}`)
+        }
+    })
+
+    stream.on(ETwitterStreamEvent.Error, (error) => {
+        l.error(`Stream error: ${error}`)
+    })
 }
 
 run().catch((err: any): void => {
