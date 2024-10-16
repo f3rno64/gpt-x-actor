@@ -9,4 +9,3 @@ if [ -z "$WORKER_NAME" ]; then
 fi
 
 export $(cat "$DIR/.env" | xargs) && $(which node) "$DIR/dist/main/$WORKER_NAME.js"
-*/1 * * * * (. "$DIR/scripts/cron.env.sh"; "$DIR/scripts/worker.sh" >> "$LOG_DIR/$WORKER_NAME.log"; )

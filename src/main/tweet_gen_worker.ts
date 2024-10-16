@@ -1,5 +1,4 @@
 import dotenv from 'dotenv'
-import path from 'path'
 import { promises as fs } from 'fs'
 import _isEmpty from 'lodash/isEmpty'
 import { Signale } from 'signale'
