@@ -8,3 +8,5 @@ tags
 todo
 tsconfig.tsbuildinfo
 .env
+!/data/.keep
+/data
