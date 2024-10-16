@@ -15,11 +15,28 @@ import readline from 'readline';
 
 const exec = require('child_process').exec;
 
+export const { NODE_ENV = 'development' } = process.env
 export const MAX_PROMPT_LENGTH = 30_000;
 export const rl: readline.Interface = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
+
+const DB_FN = process.env['DB_FN'] || `db-${NODE_ENV}.json`;
+const dbFilePath = path.join(__dirname, '../data', DB_FN);
+
+export const loadDB = (): any => {
+    if (fs.existsSync(dbFilePath)) {
+        const data = fs.readFileSync(dbFilePath, 'utf-8');
+        return JSON.parse(data);
+    }
+    return {};
+};
+
+export const saveDB = (data: any): void => {
+    fs.writeFileSync(dbFilePath, JSON.stringify(data, null, 2));
+    signale.success(`Database saved to ${dbFilePath}`);
+};
 
 export const hashContent = (content: string): string => {
     return crypto.createHash('sha256').update(content).digest('hex');

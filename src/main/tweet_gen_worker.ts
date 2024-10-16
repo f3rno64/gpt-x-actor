@@ -1,7 +1,7 @@
 import dotenv from 'dotenv'
 import _isEmpty from 'lodash/isEmpty'
 import { Signale } from 'signale'
-import { callOpenAiApi, loadTemplate, promptUser } from '../lib'
+import { callOpenAiApi, loadTemplate, loadDB, promptUser, saveDB } from '../lib'
 import Twitter from 'twitter-api-v2'
 
 dotenv.config()
@@ -17,6 +17,16 @@ const getEnvVar = async (key: string, promptMessage: string): Promise<string> =>
 const l = new Signale({ scope: 'index' })
 
 const run = async () => {
+    const db = await loadDB()
+    const { lastTweetedAtMs = 0 } = db
+    const MIN_TWEET_INTERVAL_MS = await getEnvVar('MIN_TWEET_INTERVAL_MS', 'Enter the minimum tweet interval in milliseconds:')
+    const currentTweetInterval = Date.now() - lastTweetedAtMs
+
+    if (currentTweetInterval <= +MIN_TWEET_INTERVAL_MS) {
+        l.star(`Minimum tweet interval not reached: ${currentTweetInterval}ms elapsed since ${new Date(lastTweetedAtMs).toISOString()}`)
+        return
+    }
+
     const TWITTER_API_KEY = await getEnvVar('TWITTER_API_KEY', 'Enter the Twitter API key:')
     const TWITTER_API_SECRET = await getEnvVar('TWITTER_API_SECRET', 'Enter the Twitter API secret:')
     const TWITTER_ACCESS_TOKEN = await getEnvVar('TWITTER_ACCESS_TOKEN', 'Enter the Twitter access token:')
@@ -48,6 +58,8 @@ const run = async () => {
 
     if (confirmation.toLowerCase()[0] === 'y') {
         await twitterClient.v2.tweet(finalTweetContent)
+        db.lastTweetedAtMs = Date.now()
+        await saveDB(db)
     }
 }
 
