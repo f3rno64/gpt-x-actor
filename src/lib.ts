@@ -25,6 +25,27 @@ export const rl: readline.Interface = readline.createInterface({
 const DB_FN = process.env['DB_FN'] || `db-${NODE_ENV}.json`;
 const dbFilePath = path.join(__dirname, '../data', DB_FN);
 
+export const asyncWithRetry = async <T>(
+    fn: () => Promise<T>,
+    retries: number = 3,
+    delay: number = 1000
+): Promise<T> => {
+    let attempt = 0;
+
+    while (attempt < retries) {
+        try {
+            return await fn();
+        } catch (error) {
+            attempt++;
+            if (attempt >= retries) {
+                throw error;
+            }
+            await new Promise(resolve => setTimeout(resolve, delay * Math.pow(2, attempt)));
+        }
+    }
+
+    throw new Error('Max retries reached');
+};
 export const loadDB = (): any => {
     if (fs.existsSync(dbFilePath)) {
         const data = fs.readFileSync(dbFilePath, 'utf-8');

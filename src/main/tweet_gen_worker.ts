@@ -2,7 +2,7 @@ import dotenv from 'dotenv'
 import { promises as fs } from 'fs'
 import _isEmpty from 'lodash/isEmpty'
 import { Signale } from 'signale'
-import { callOpenAiApi, loadTemplate, loadDB, promptUser, saveDB } from '../lib'
+import { callOpenAiApi, loadTemplate, loadDB, promptUser, saveDB, asyncWithRetry } from '../lib'
 import Twitter from 'twitter-api-v2'
 
 dotenv.config()
@@ -87,7 +87,7 @@ const run = async () => {
     const hashtags = await callOpenAiApi(tweetHashtagsGeneratorTemplate({ content: tweetContent, hashtagSuggestions: HASHTAG_SUGGESTIONS }))
     const finalTweetContent = tweetTemplate({ content: tweetContent, hashtags })
 
-    await twitterClient.v2.tweet(finalTweetContent)
+    await asyncWithRetry(() => twitterClient.v2.tweet(finalTweetContent), 3, 5000)
     db.lastTweetedAtMs = Date.now()
     await saveDB(db)
 }
