@@ -47,6 +47,7 @@
     "prepare": "husky",
     "prepare-release": "pnpm build && git add docs",
     "prepublish": "pnpm build",
+    "postinstall": "pnpm build:ts",
     "release": "pnpm prepare-release && pnpm update-version && git push --follow-tags origin main",
     "serve:coverage": "http-server ./coverage",
     "serve:docs": "http-server ./docs",
