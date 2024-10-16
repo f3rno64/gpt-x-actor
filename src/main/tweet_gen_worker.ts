@@ -1,4 +1,6 @@
 import dotenv from 'dotenv'
+import path from 'path'
+import { promises as fs } from 'fs'
 import _isEmpty from 'lodash/isEmpty'
 import { Signale } from 'signale'
 import { callOpenAiApi, loadTemplate, loadDB, promptUser, saveDB } from '../lib'
@@ -27,10 +29,35 @@ const run = async () => {
         return
     }
 
-    const TWITTER_API_KEY = await getEnvVar('TWITTER_API_KEY', 'Enter the Twitter API key:')
-    const TWITTER_API_SECRET = await getEnvVar('TWITTER_API_SECRET', 'Enter the Twitter API secret:')
-    const TWITTER_ACCESS_TOKEN = await getEnvVar('TWITTER_ACCESS_TOKEN', 'Enter the Twitter access token:')
-    const TWITTER_ACCESS_TOKEN_SECRET = await getEnvVar('TWITTER_ACCESS_TOKEN_SECRET', 'Enter the Twitter access token secret:')
+    const WORKER_CONFIG_NAME = await getEnvVar('WORKER_CONFIG_NAME', 'Enter the worker config name:')
+    const workerConfigPath = path.join(__dirname, '../../worker_configs', `${WORKER_CONFIG_NAME}.json`)
+    const workerConfigJSON = await fs.readFile(workerConfigPath, 'utf-8')
+    const workerConfig = JSON.parse(workerConfigJSON)
+
+    const {
+        ACCOUNT_INFORMATION,
+        HASHTAG_SUGGESTIONS,
+        TWITTER_API_KEY,
+        TWITTER_API_SECRET,
+        TWITTER_ACCESS_TOKEN,
+        TWITTER_ACCESS_TOKEN_SECRET
+    } = workerConfig
+
+    if (_isEmpty(TWITTER_API_KEY)) {
+        throw new Error('TWITTER_API_KEY is missing or empty in the worker config.')
+    }
+
+    if (_isEmpty(TWITTER_API_SECRET)) {
+        throw new Error('TWITTER_API_SECRET is missing or empty in the worker config.')
+    }
+
+    if (_isEmpty(TWITTER_ACCESS_TOKEN)) {
+        throw new Error('TWITTER_ACCESS_TOKEN is missing or empty in the worker config.')
+    }
+
+    if (_isEmpty(TWITTER_ACCESS_TOKEN_SECRET)) {
+        throw new Error('TWITTER_ACCESS_TOKEN_SECRET is missing or empty in the worker config.')
+    }
 
     const twitterClient = new Twitter({
         appKey: TWITTER_API_KEY,
@@ -43,24 +70,18 @@ const run = async () => {
     const tweetTemplate = loadTemplate('tweet.hbs')
     const tweetHashtagsGeneratorTemplate = loadTemplate('tweet_hashtags_generator.hbs')
 
-    const accountInformation = await getEnvVar('ACCOUNT_INFORMATION', 'Describe the account:')
-    const hashtagContent = await getEnvVar('HASHTAG_CONTENT', 'Enter hashtags:')
-
     l.star('Generating tweet...')
 
-    const tweetContent = await callOpenAiApi(tweetGeneratorTemplate({ accountInformation, hashtags: hashtagContent }), 'gpt-4o-mini')
+    const tweetContent = await callOpenAiApi(tweetGeneratorTemplate({ accountInformation: ACCOUNT_INFORMATION, hashtags: HASHTAG_SUGGESTIONS }), 'gpt-4o-mini')
 
     l.star('Generating hashtags...')
 
-    const hashtags = await callOpenAiApi(tweetHashtagsGeneratorTemplate({ content: tweetContent, hashtagSuggestions: hashtagContent }))
+    const hashtags = await callOpenAiApi(tweetHashtagsGeneratorTemplate({ content: tweetContent, hashtagSuggestions: HASHTAG_SUGGESTIONS }))
     const finalTweetContent = tweetTemplate({ content: tweetContent, hashtags })
-    const confirmation = await promptUser(`Tweet the following content?\n\n${finalTweetContent}\n(yes/no) `)
 
-    if (confirmation.toLowerCase()[0] === 'y') {
-        await twitterClient.v2.tweet(finalTweetContent)
-        db.lastTweetedAtMs = Date.now()
-        await saveDB(db)
-    }
+    await twitterClient.v2.tweet(finalTweetContent)
+    db.lastTweetedAtMs = Date.now()
+    await saveDB(db)
 }
 
 run().catch((err: any): void => {

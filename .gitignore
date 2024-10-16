@@ -10,3 +10,5 @@ tsconfig.tsbuildinfo
 .env
 !/data/.keep
 /data
+!/worker_configs/.keep
+/worker_configs

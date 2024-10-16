@@ -43,7 +43,7 @@ export const hashContent = (content: string): string => {
 };
 
 export const promptUser = (query: string): Promise<string> => {
-    return new Promise((resolve) => rl.question(query, resolve));
+    return new Promise((resolve) => rl.question(`${query}\n> `, resolve));
 };
 
 export const getFilePaths = (dir: string, extensions: string[]): string[] => {
