@@ -22,5 +22,5 @@ pnpm run:main:tweet-gen-worker
 For now, cronjobs are the preferred way to schedule execution of the worker:
 
 ```
-*/1 * * * * /path/to/project/scripts/tweet_gen_worker.sh
+*/30 * * * * sleep ${RANDOM:0:2}m; export WORKER_CONFIG_PATH=/opt/gpt-x-actor/worker_configs/WORKER_CONFIG_NAME.json && . /opt/gpt-x-actor/scripts/cron.env.sh && /opt/gpt-x-actor/scripts/WORKER.sh >> /opt/gpt-x-actor/logs/WORKER.log 2>&1
 ```
