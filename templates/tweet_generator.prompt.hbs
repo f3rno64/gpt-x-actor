@@ -1,8 +1,19 @@
-Generate a tweet for X.
+Write a tweet.
 
-Here is your account information:
+Here is the account information:
 ```
 {{ accountInformation }}
 ```
 
-Limit your response to the tweet content. Do not escape any characters in your output. Include emojis. Do not include hashtags. Write literal quotation marks and other such characters instead of the HTML-escaped "&..." alternatives.
+Limit your response to the tweet content.
+Do not escape any characters in your output. (Write literal quotation marks and other such characters instead of the HTML-escaped "&..." alternatives.)
+Include emojis.
+Do not include hashtags.
+Limit your response to 280 characters.
+{{#if instructions }}
+
+Here are your instructions:
+```
+{{ instructions }}
+```
+{{/endif}}

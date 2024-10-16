@@ -41,6 +41,7 @@ const run = async () => {
     const workerConfig = JSON.parse(workerConfigJSON)
 
     const {
+        INSTRUCTIONS,
         ACCOUNT_INFORMATION,
         HASHTAG_SUGGESTIONS,
         TWITTER_API_KEY,
@@ -78,7 +79,7 @@ const run = async () => {
 
     l.star('Generating tweet...')
 
-    const tweetContent = await callOpenAiApi(tweetGeneratorTemplate({ accountInformation: ACCOUNT_INFORMATION, hashtags: HASHTAG_SUGGESTIONS }), 'gpt-4o-mini')
+    const tweetContent = await callOpenAiApi(tweetGeneratorTemplate({ accountInformation: ACCOUNT_INFORMATION, instructions: INSTRUCTIONS ?? false }), 'gpt-4o-mini')
 
     l.star('Generating hashtags...')
 
