@@ -29,9 +29,14 @@ const run = async () => {
         return
     }
 
-    const WORKER_CONFIG_NAME = await getEnvVar('WORKER_CONFIG_NAME', 'Enter the worker config name:')
-    const workerConfigPath = path.join(__dirname, '../../worker_configs', `${WORKER_CONFIG_NAME}.json`)
-    const workerConfigJSON = await fs.readFile(workerConfigPath, 'utf-8')
+    const WORKER_CONFIG_PATH = await getEnvVar('WORKER_CONFIG_PATH', 'Enter the worker config file path:')
+    let workerConfigJSON: string
+    try {
+        workerConfigJSON = await fs.readFile(WORKER_CONFIG_PATH, 'utf-8')
+    } catch (error) {
+        l.error(`Worker config file does not exist at path: ${WORKER_CONFIG_PATH}`)
+        return
+    }
     const workerConfig = JSON.parse(workerConfigJSON)
 
     const {
