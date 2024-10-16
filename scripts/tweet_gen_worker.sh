@@ -9,3 +9,4 @@ if [ -z "$WORKER_CONFIG_PATH" ]; then
 fi
 
 export $(cat "$DIR/.env" | xargs) && $(which node) "$DIR/dist/main/tweet_gen_worker.js"
+echo "Execution finished at $(date)" >> "$LOG_DIR/tweet_gen_worker.exec.log"
