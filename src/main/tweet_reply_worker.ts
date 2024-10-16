@@ -18,8 +18,6 @@ const getEnvVar = async (key: string, promptMessage: string): Promise<string> =>
 const l = new Signale({ scope: 'index' })
 
 const run = async () => {
-    l.star('Subscribing to live tweet firehose...')
-
     const WORKER_CONFIG_PATH = await getEnvVar('WORKER_CONFIG_PATH', 'Enter the worker config file path:')
 
     l.star(`Started at ${new Date().toISOString()}: ${WORKER_CONFIG_PATH}`)
@@ -36,32 +34,17 @@ const run = async () => {
     const {
         TWITTER_API_KEY,
         TWITTER_API_SECRET,
+        TWITTER_BEARER_TOKEN,
         TWITTER_ACCESS_TOKEN,
         TWITTER_ACCESS_TOKEN_SECRET
     } = workerConfig
 
-    if (_isEmpty(TWITTER_API_KEY)) {
-        throw new Error('TWITTER_API_KEY is missing or empty in the worker config.')
-    }
-
-    if (_isEmpty(TWITTER_API_SECRET)) {
-        throw new Error('TWITTER_API_SECRET is missing or empty in the worker config.')
-    }
-
-    if (_isEmpty(TWITTER_ACCESS_TOKEN)) {
-        throw new Error('TWITTER_ACCESS_TOKEN is missing or empty in the worker config.')
-    }
-
-    if (_isEmpty(TWITTER_ACCESS_TOKEN_SECRET)) {
-        throw new Error('TWITTER_ACCESS_TOKEN_SECRET is missing or empty in the worker config.')
-    }
-
-    const twitterClient = new Twitter({
+    const twitterClient = new Twitter(_isEmpty(TWITTER_BEARER_TOKEN) ? {
         appKey: TWITTER_API_KEY,
         appSecret: TWITTER_API_SECRET,
         accessToken: TWITTER_ACCESS_TOKEN,
         accessSecret: TWITTER_ACCESS_TOKEN_SECRET
-    })
+    }: TWITTER_BEARER_TOKEN)
 
     l.star('fetching existing stream rules...')
 
