@@ -8,4 +8,4 @@ if [ -z "$WORKER_CONFIG_PATH" ]; then
     exit 1
 fi
 
-export $(cat "$DIR/.env" | xargs) && $(which node) "$DIR/scripts/worker.sh"
+export $(cat "$DIR/.env" | xargs) && $(which node) "$DIR/dist/main/tweet_gen_worker.sh"
