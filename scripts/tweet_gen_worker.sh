@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-DIR=$(dirname "$0")
+DIR=$(dirname "$0")/../
 LOG_DIR="$DIR/logs"
 
 if [ -z "$WORKER_CONFIG_PATH" ]; then
