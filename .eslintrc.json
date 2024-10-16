@@ -1,0 +1,67 @@
+{
+  "root": true,
+  "env": {
+    "node": true,
+    "es2024": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "lib": ["esnext"],
+    "sourceType": "module",
+    "ecmaVersion": "latest",
+    "jsDocParsingMode": "all",
+    "project": "./tsconfig.json",
+    "allowAutomaticSingleRunInference": true,
+    "warnOnUnsupportedTypeScriptVersion": true
+  },
+  "plugins": [
+    "pure",
+    "github",
+    "lodash",
+    "regexp",
+    "sonarjs",
+    "unicorn",
+    "promise",
+    "immutable",
+    "no-secrets",
+    "json-format",
+    "switch-case",
+    "optimize-regex",
+    "@typescript-eslint",
+    "write-good-comments",
+    "eslint-plugin-tsdoc",
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:github/recommended",
+    "plugin:lodash/recommended",
+    "plugin:regexp/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:promise/recommended",
+    "plugin:switch-case/recommended",
+    "plugin:security/recommended-legacy",
+    "plugin:eslint-comments/recommended",
+    "plugin:jsonc/recommended-with-json",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+  ],
+  "rules": {
+    "indent": ["error", 2],
+    "i18n-text/no-en": 0,
+    "no-invalid-this": 0,
+    "semi": ["error", "never"],
+    "import/no-namespace": 0,
+    "quotes": ["error", "single"],
+    "github/array-foreach": 0,
+    "no-secrets/no-secrets": "error",
+    "linebreak-style": ["error", "unix"],
+    "lodash/prefer-lodash-method": 0,
+    "sonarjs/no-duplicate-string": 0,
+    "@typescript-eslint/no-unsafe-call": 0,
+    "sonarjs/no-nested-template-literals": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "filenames/match-regex": [2, "^[a-z_]+$", true],
+    "@typescript-eslint/no-unsafe-assignment": 0
+  }
+}

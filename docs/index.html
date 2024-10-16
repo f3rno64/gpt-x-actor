@@ -1,0 +1,200 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@f3rno64/gpt-x-account</title><meta name="description" content="Documentation for @f3rno64/gpt-x-account"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css?cache=1729103509322"/><link rel="stylesheet" href="assets/highlight.css?cache=1729103509322"/><script defer src="assets/main.js?cache=1729103509322"></script><script async src="assets/icons.js?cache=1729103509322" id="tsd-icons-script"></script><script async src="assets/search.js?cache=1729103509322" id="tsd-search-script"></script><script async src="assets/navigation.js?cache=1729103509322" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@f3rno64/gpt-x-account</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h1>@f3rno64/gpt-x-account</h1></div><div class="tsd-panel tsd-typography"><a id="md:nodejs-typescript-library-template" class="tsd-anchor"></a><h1 class="tsd-anchor-link">Node.JS TypeScript Library Template<a href="#md:nodejs-typescript-library-template" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p>This is a template repository meant to be used as a starting point for new
+<a href="https://nodejs.org/en" target="_blank" class="external"><strong><code>Node.JS</code></strong></a> projects written in
+<a href="https://www.typescriptlang.org/" target="_blank" class="external"><strong><code>TypeScript</code></strong></a>.</p>
+<p>As this is a highly opinionated template, many tools are included and
+pre-configured with sane and strict defaults to enforce a standard level of
+code quality and a consistent style across projects.</p>
+<p>With this in mind, feel free to edit the various config files to your liking.</p>
+<a id="md:prerequisites" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Prerequisites<a href="#md:prerequisites" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>To view static documentation and coverage reports,
+<a href="https://www.npmjs.com/package/http-server" target="_blank" class="external"><strong><code>http-server</code></strong></a> is recommended; it is included as a
+development dependency for the <strong><code>serve:*</code></strong> commands, but for manual CLI
+usage, install it with <strong><code>npm i -g http-server</code></strong>.</p>
+<a id="md:setup" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Setup<a href="#md:setup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p><a href="https://pnpm.io/" target="_blank" class="external"><strong><code>pnpm</code></strong></a> is used as the package manager; install it with
+<strong><code>npm i -g pnpm</code></strong> if you do not already have it.</p>
+<p>Then, to get started, simply install dependencies with <strong><code>pnpm i</code></strong>.</p>
+<a id="md:building-sources-and-documentation" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Building Sources and Documentation<a href="#md:building-sources-and-documentation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Three npm scripts are provided to build
+<a href="https://www.typescriptlang.org/" target="_blank" class="external"><strong><code>TypeScript</code></strong></a> sources and generate documentation with
+<a href="https://typedoc.org/" target="_blank" class="external"><strong><code>TypeDoc</code></strong></a>:</p>
+<ul>
+<li><strong><code>build</code></strong> -- runs both <strong><code>build:ts</code></strong> and <strong><code>build:docs</code></strong>.</li>
+<li><strong><code>build:ts</code></strong> -- builds <a href="https://www.typescriptlang.org/" target="_blank" class="external"><strong><code>TypeScript</code></strong></a> sources from
+<a href="/src"><strong><code>./src</code></strong></a> to native JavaScript files in <a href="/dist"><strong><code>./dist</code></strong></a>.</li>
+<li><strong><code>build:docs</code></strong> -- builds documentation with
+<a href="https://typedoc.org/" target="_blank" class="external"><strong><code>TypeDoc</code></strong></a> in <a href="/docs"><strong><code>./docs</code></strong></a>. Both
+<a href="/LICENSE.md"><strong><code>LICENSE.md</code></strong></a> and <a href="/CHANGELOG.md"><strong><code>CHANGELOG.md</code></strong></a> are
+copied into <a href="/docs"><strong><code>./docs</code></strong></a>.</li>
+</ul>
+<a id="md:viewing-documentation-site" class="tsd-anchor"></a><h4 class="tsd-anchor-link">Viewing Documentation Site<a href="#md:viewing-documentation-site" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4><p>After building the static HTML documentation with <strong><code>build:docs</code></strong>,
+run <code>pnpm serve:docs</code> or <code>http-server docs</code> and navigate to
+<a href="http://localhost:8080" target="_blank" class="external"><strong><code>localhost:8080</code></strong></a>.</p>
+<a id="md:deploy-documentation-on-github-pages" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Deploy Documentation On GitHub Pages<a href="#md:deploy-documentation-on-github-pages" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>To enable GitHub Pages, access the repository settings and configure the Pages
+settings to use the <code>main</code> (or <code>master</code>) branch and the <code>./docs</code> folder.</p>
+<a id="md:testing" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Testing<a href="#md:testing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p><strong>Testing</strong> is done with <a href="https://mochajs.org/" target="_blank" class="external"><strong><code>mocha</code></strong></a> and <a href="https://www.chaijs.com/" target="_blank" class="external"><strong><code>chai</code></strong></a>.
+<a href="https://github.com/istanbuljs/nyc" target="_blank" class="external"><strong><code>nyc</code></strong></a> is used to generate coverage reports. The following npm
+scripts are provided:</p>
+<ul>
+<li><strong><code>test</code></strong> -- runs mocha on all TypeScript sources</li>
+<li><strong><code>test:coverage</code></strong> -- like <strong><code>test</code></strong> but runs
+<a href="https://github.com/istanbuljs/nyc" target="_blank" class="external"><strong><code>nyc</code></strong></a> to generate an HTML coverage report in <em><code>/coverage</code></em>.</li>
+<li><strong><code>test:watch</code></strong> -- runs <a href="https://github.com/istanbuljs/nyc" target="_blank" class="external"><strong><code>nyc</code></strong></a> and <a href="https://mochajs.org/" target="_blank" class="external"><strong><code>mocha</code></strong></a>
+continuously, re-running tests when any sources change.</li>
+</ul>
+<a id="md:viewing-test-coverage-report" class="tsd-anchor"></a><h4 class="tsd-anchor-link">Viewing Test Coverage Report<a href="#md:viewing-test-coverage-report" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4><p>After generating an HTML coverage report with <strong><code>test:coverage</code></strong>, view it by
+running either <strong><code>serve:coverage</code></strong> or <code>http-server ./coverage</code> and navigating
+to <a href="http://localhost:8080" target="_blank" class="external"><strong><code>localhost:8080</code></strong></a>.</p>
+<a id="md:linting" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Linting<a href="#md:linting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p><strong>Linting</strong> is provided by <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> and
+<a href="https://github.com/markdownlint/markdownlint" target="_blank" class="external"><strong><code>markdownlint</code></strong></a>. The following npm scripts are provided:</p>
+<ul>
+<li>
+<p><strong><code>lint:eslint</code></strong> -- runs <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> on
+<a href="/package.json"><strong><code>./package.json</code></strong></a> and <a href="/src"><strong><code>./src/**/*</code></strong></a> and
+prints any errors.</p>
+</li>
+<li>
+<p><strong><code>lint:markdownlint</code></strong> -- runs
+<a href="https://github.com/markdownlint/markdownlint" target="_blank" class="external"><strong><code>markdownlint</code></strong></a> on <a href="/README.md"><strong><code>README.md</code></strong></a>
+and prints any errors.</p>
+</li>
+<li>
+<p><strong><code>lint:eslint:fix</code></strong> -- like <strong><code>lint:eslint</code></strong> but automatically fixes
+linter errors where possible.</p>
+</li>
+<li>
+<p><strong><code>lint:markdownlint:fix</code></strong> -- like <strong><code>lint:markdownlint</code></strong> but automatically
+fixes linter errors where possible.</p>
+</li>
+<li>
+<p><strong><code>lint</code></strong> -- runs both <strong><code>lint:eslint</code></strong> and <strong><code>lint:markdownlint</code></strong>.</p>
+</li>
+<li>
+<p><strong><code>lint:fix</code></strong> -- runs both <strong><code>lint:eslint:fix</code></strong> and
+<strong><code>lint:markdownlint:fix</code></strong></p>
+</li>
+</ul>
+<a id="md:eslint-config--plugins" class="tsd-anchor"></a><h4 class="tsd-anchor-link"><a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> Config &amp; Plugins<a href="#md:eslint-config--plugins" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4><p>A strict <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> config is provided with many
+plugins, the full list is below:</p>
+<ul>
+<li><a href="https://npmjs.com/package/eslint-plugin-chai-expect" target="_blank" class="external"><strong><code>eslint-plugin-chai-expect</code></strong></a> --
+<a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> plugin that checks for common chai.js expect() mistakes.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-eslint-comments" target="_blank" class="external"><strong><code>eslint-plugin-eslint-comments</code></strong></a> --
+<a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> rules for JavaScript comments.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-github" target="_blank" class="external"><strong><code>eslint-plugin-github</code></strong></a> -- An opinionated collection of
+<a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> rules used by GitHub.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-immutable" target="_blank" class="external"><strong><code>eslint-plugin-immutable</code></strong></a> -- This is an
+<a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> plugin to disable all mutation in JavaScript.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-json-format" target="_blank" class="external"><strong><code>eslint-plugin-json-format</code></strong></a> --
+<a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> plugin for JSON files.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-jsonc" target="_blank" class="external"><strong><code>eslint-plugin-jsonc</code></strong></a> -- This
+<a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> plugin provides linting rules relate to better
+ways to help you avoid problems when using <a href="https://www.json.org/json-en.html" target="_blank" class="external"><strong><code>JSON</code></strong></a>,
+<a href="https://github.com/microsoft/node-jsonc-parser" target="_blank" class="external"><strong><code>JSONC</code></strong></a> and <a href="https://json5.org/" target="_blank" class="external"><strong><code>JSON5</code></strong></a>.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-lodash" target="_blank" class="external"><strong><code>eslint-plugin-lodash</code></strong></a> -- Lodash-specific linting rules
+for <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a>.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-mocha" target="_blank" class="external"><strong><code>eslint-plugin-mocha</code></strong></a> -- <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a>
+rules for mocha.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-no-secrets" target="_blank" class="external"><strong><code>eslint-plugin-no-secrets</code></strong></a> -- An
+<a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> rule that searches for potential secrets/keys in
+code and JSON files.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-optimize-regex" target="_blank" class="external"><strong><code>eslint-plugin-optimize-regex</code></strong></a> -- Optimize regex literals.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-promise" target="_blank" class="external"><strong><code>eslint-plugin-promise</code></strong></a> -- Enforce best practices for
+JavaScript promises.</li>
+<li><a href="https://github.com/purely-functional/eslint-plugin-pure" target="_blank" class="external"><strong><code>eslint-plugin-pure</code></strong></a> -- Enforce rules to make your code purely
+functional by disallowing some language constructs.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-regexp" target="_blank" class="external"><strong><code>eslint-plugin-regexp</code></strong></a> -- An <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a>
+plugin for finding RegExp mistakes and RegExp style guide violations.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-sonarjs" target="_blank" class="external"><strong><code>eslint-plugin-sonarjs</code></strong></a> -- <a href="https://github.com/SonarSource/SonarJS" target="_blank" class="external"><strong><code>SonarJS</code></strong></a>
+rules for <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> to help developers produce
+<a href="https://www.sonarsource.com/solutions/clean-code/" target="_blank" class="external"><strong><code>Clean Code</code></strong></a> by detecting bugs and suspicious patterns.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-switch-case" target="_blank" class="external"><strong><code>eslint-plugin-switch-case</code></strong></a> -- Switch-case-specific
+linting rules for <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a>.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-tsdoc" target="_blank" class="external"><strong><code>eslint-plugin-tsdoc</code></strong></a> -- This <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a>
+plugin provides a rule for validating that TypeScript doc comments conform
+to the <a href="https://tsdoc.org/" target="_blank" class="external"><strong><code>TSDoc</code></strong></a> specification.</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-unicorn" target="_blank" class="external"><strong><code>eslint-plugin-unicorn</code></strong></a> -- More than 100 powerful
+<a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> rules</li>
+<li><a href="https://npmjs.com/package/eslint-plugin-write-good-comments" target="_blank" class="external"><strong><code>eslint-plugin-write-good-comments</code></strong></a> -- Enforce
+good writing style in your comments.</li>
+</ul>
+<a id="md:formatting" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Formatting<a href="#md:formatting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p><a href="https://prettier.io/" target="_blank" class="external"><strong><code>Prettier</code></strong></a> is included to automatically format sources to
+enforce a consistent and standardized code style. It automatically verifies
+that sources conform to the standard style as part of the
+<a href="https://typicode.github.io/husky/" target="_blank" class="external"><strong><code>Husky</code></strong></a> <strong>pre-commit</strong> hook.</p>
+<p>Two scripts are provided:</p>
+<ul>
+<li><strong><code>format</code></strong> -- runs <a href="https://prettier.io/" target="_blank" class="external"><strong><code>Prettier</code></strong></a> and formats files
+in-place.</li>
+<li><strong><code>format:check</code></strong> -- runs <a href="https://prettier.io/" target="_blank" class="external"><strong><code>Prettier</code></strong></a> in <strong>check</strong> mode,
+reporting any files that do not match the standard style. To fix any
+reported issues, use the <strong><code>format</code></strong> script.</li>
+</ul>
+<a id="md:husky" class="tsd-anchor"></a><h3 class="tsd-anchor-link"><a href="https://typicode.github.io/husky/" target="_blank" class="external"><strong><code>Husky</code></strong></a><a href="#md:husky" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><blockquote>
+<p><a href="https://typicode.github.io/husky/" target="_blank" class="external"><strong><code>Husky</code></strong></a> hooks are automatically
+installed when <code>pnpm i</code> is run.</p>
+</blockquote>
+<p><a href="https://typicode.github.io/husky/" target="_blank" class="external"><strong><code>Husky</code></strong></a> is included and configured
+with two commit hooks:</p>
+<ul>
+<li><strong>pre-commit</strong>: runs
+<a href="https://github.com/lint-staged/lint-staged" target="_blank" class="external"><strong><code>lint-staged</code></strong></a>, which runs
+<a href="https://github.com/markdownlint/markdownlint" target="_blank" class="external"><strong><code>markdownlint</code></strong></a> and <a href="https://eslint.org/" target="_blank" class="external"><strong><code>ESLint</code></strong></a> on
+<a href="/README.md"><em>README.md</em></a> and project sources in <a href="/src"><strong><code>src/**</code></strong></a>.</li>
+<li><strong>commit-msg</strong>: runs <a href="https://commitlint.js.org/" target="_blank" class="external"><strong><code>commitlint</code></strong></a> on commit messages
+to enforce the <a href="https://www.conventionalcommits.org/" target="_blank" class="external"><strong><code>conventional commit</code></strong></a>
+standard.</li>
+</ul>
+<a id="md:creating-a-new-project" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Creating A New Project<a href="#md:creating-a-new-project" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>To start a new project with this repository as a template, clone it and delete
+the <strong>.git</strong> folder, then run <strong><code>git init .</code></strong> to start a new git project and
+commit history.</p>
+<p>Then, configure <a href="/package.json"><strong><code>package.json</code></strong></a> with your project name,
+description, keywords, repository URL, version number, and any other details
+you wish to change.</p>
+<p>Add code to <a href="/src"><strong><code>./src</code></strong></a>, and it will be built to <a href="/dist"><strong><code>./dist</code></strong></a>.
+<a href="/src/index.ts"><strong><code>./src/index.ts</code></strong></a> will be built as the project entry point
+at <a href="/dist/index.js"><strong><code>./dist/index.js</code></strong></a> as defined in the
+<a href="/package.json"><strong><code>manifest</code></strong></a>.</p>
+<a id="md:ci" class="tsd-anchor"></a><h3 class="tsd-anchor-link">CI<a href="#md:ci" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>After each push to the <strong><code>main</code></strong> branch, the
+<a href="/.github/workflows/ci.yml"><strong><code>CI GitHub Action</code></strong></a> runs to ensure all checks
+pass.</p>
+<a id="md:releasing" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Releasing<a href="#md:releasing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>To release a new version of your package, the <strong><code>release</code></strong> npm script is
+provided. It does the following:</p>
+<ul>
+<li>runs <strong><code>pnpm format:check</code></strong></li>
+<li>runs <strong><code>pnpm lint</code></strong></li>
+<li>runs <strong><code>pnpm test</code></strong></li>
+<li>runs <strong><code>pnpm build</code></strong>,</li>
+<li>runs <strong><code>git add docs</code></strong></li>
+<li>Updates the <a href="/package.json"><strong><code>package.json</code></strong></a> version appropriately based
+on the commits made since the last release.</li>
+<li>Updates the <a href="/CHANGELOG.md"><strong><code>CHANGELOG.md</code></strong></a>.</li>
+<li>Commits all changes and tags the commit with the new version number.</li>
+<li>Pushes <strong><code>main</code></strong> with the new <strong>tag</strong> to <strong>origin</strong>.</li>
+<li>Triggers the <a href="/.github/workflows/publish.yml"><strong><code>NPM Publish</code></strong></a> workflow to
+automatically publish the new version on the <strong>NPM Registry</strong>.</li>
+</ul>
+<p>Available scripts are:</p>
+<ul>
+<li><code>pnpm docs</code>: generate HTML documentation in <code>./docs</code></li>
+<li><code>test</code>: run mocha on all tests in <code>./src/tests</code></li>
+<li><code>test:coverage</code>: run mocha and generate a coverage report in <code>./coverage</code></li>
+<li><code>build</code>: build to JS in <code>./dist</code></li>
+<li><code>lint</code>: run <code>eslint</code> on all files in <code>./src</code></li>
+<li><code>update-deps</code>: update all dependencies</li>
+<li><code>update-version</code>: updates the <a href="http://CHANGELOG.md" target="_blank" class="external">CHANGELOG.md</a>, bumps the version, commits &amp; tags</li>
+<li><code>release</code>: lints, tests, builds, generates docs, runs <code>update-version</code> and
+pushes.</li>
+</ul>
+<a id="md:publishing" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Publishing<a href="#md:publishing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Publishing to the <a href="http://npmjs.com/" target="_blank" class="external"><strong><code>NPM Registry</code></strong></a> is done automatically
+with a <a href="./.github/workflows/npm-publish.yml"><strong><code>NPM Publish GitHub Action</code></strong></a>
+that runs when a new tag is pushed. For this to work, you must add a secret
+named <strong><code>NPM_TOKEN</code></strong> to the repository settings.</p>
+<a id="md:release-history" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Release History<a href="#md:release-history" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>See <a href="media/CHANGELOG.md"><strong><code>CHANGELOG.md</code></strong></a> for more information.</p>
+<a id="md:license" class="tsd-anchor"></a><h2 class="tsd-anchor-link">License<a href="#md:license" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Distributed under the <strong>MIT</strong> license. See <a href="media/LICENSE.md"><strong><code>LICENSE.md</code></strong></a>
+for more information.</p>
+<a id="md:contributing" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Contributing<a href="#md:contributing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create a new Pull Request</li>
+</ol>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:nodejs-typescript-library-template"><span>Node.JS <wbr/>Type<wbr/>Script <wbr/>Library <wbr/>Template</span></a><ul><li><a href="#md:prerequisites"><span>Prerequisites</span></a></li><li><a href="#md:setup"><span>Setup</span></a></li><li><ul><li><a href="#md:building-sources-and-documentation"><span>Building <wbr/>Sources and <wbr/>Documentation</span></a></li><li><ul><li><a href="#md:viewing-documentation-site"><span>Viewing <wbr/>Documentation <wbr/>Site</span></a></li></ul></li><li><a href="#md:deploy-documentation-on-github-pages"><span>Deploy <wbr/>Documentation <wbr/>On <wbr/>Git<wbr/>Hub <wbr/>Pages</span></a></li><li><a href="#md:testing"><span>Testing</span></a></li><li><ul><li><a href="#md:viewing-test-coverage-report"><span>Viewing <wbr/>Test <wbr/>Coverage <wbr/>Report</span></a></li></ul></li><li><a href="#md:linting"><span>Linting</span></a></li><li><ul><li><a href="#md:eslint-config--plugins"><span>ESLint <wbr/>Config &amp; <wbr/>Plugins</span></a></li></ul></li><li><a href="#md:formatting"><span>Formatting</span></a></li><li><a href="#md:husky"><span>Husky</span></a></li></ul></li><li><a href="#md:creating-a-new-project"><span>Creating <wbr/>A <wbr/>New <wbr/>Project</span></a></li><li><ul><li><a href="#md:ci"><span>CI</span></a></li><li><a href="#md:releasing"><span>Releasing</span></a></li><li><a href="#md:publishing"><span>Publishing</span></a></li></ul></li><li><a href="#md:release-history"><span>Release <wbr/>History</span></a></li><li><a href="#md:license"><span>License</span></a></li><li><a href="#md:contributing"><span>Contributing</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>@f3rno64/gpt-x-account</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer></footer><div class="overlay"></div></body></html>
