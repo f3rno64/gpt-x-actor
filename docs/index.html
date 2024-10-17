@@ -1,14 +1,185 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@f3rno64/gpt-x-actor</title><meta name="description" content="Documentation for @f3rno64/gpt-x-actor"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css?cache=1729133356188"/><link rel="stylesheet" href="assets/highlight.css?cache=1729133356188"/><script defer src="assets/main.js?cache=1729133356188"></script><script async src="assets/icons.js?cache=1729133356188" id="tsd-icons-script"></script><script async src="assets/search.js?cache=1729133356188" id="tsd-search-script"></script><script async src="assets/navigation.js?cache=1729133356188" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@f3rno64/gpt-x-actor</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h1>@f3rno64/gpt-x-actor</h1></div><div class="tsd-panel tsd-typography"><a id="md:gpt-x-actor---gpt-autonomous-actor-for-x" class="tsd-anchor"></a><h1 class="tsd-anchor-link">gpt-x-actor - GPT Autonomous Actor for X<a href="#md:gpt-x-actor---gpt-autonomous-actor-for-x" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><blockquote>
-<p>README &amp; docs TODO</p>
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>gpt-x-actor</title><meta name="description" content="Documentation for gpt-x-actor"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css?cache=1729183021039"/><link rel="stylesheet" href="assets/highlight.css?cache=1729183021039"/><script defer src="assets/main.js?cache=1729183021039"></script><script async src="assets/icons.js?cache=1729183021039" id="tsd-icons-script"></script><script async src="assets/search.js?cache=1729183021039" id="tsd-search-script"></script><script async src="assets/navigation.js?cache=1729183021039" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">gpt-x-actor</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h1>gpt-x-actor</h1></div><div class="tsd-panel tsd-typography"><a id="md:gpt-x-actor---🤖-gpt-autonomous-actor-for-x-twitter" class="tsd-anchor"></a><h1 class="tsd-anchor-link">GPT-X-Actor - 🤖 GPT Autonomous Actor for X (Twitter)<a href="#md:gpt-x-actor---🤖-gpt-autonomous-actor-for-x-twitter" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h1><p><a href="LICENSE.md"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License"></a></p>
+<p><strong>GPT-X-Actor</strong> is a Node.js service that leverages OpenAI's GPT models to autonomously interact with X (formerly known as Twitter). It can:</p>
+<ul>
+<li>✨ <strong>Generate and Publish Tweets</strong>: Creates tweets based on configurations and posts them via the X API.</li>
+<li>🔁 <strong>Automated Engagement</strong>: Replies to tweets by analyzing search results and determining if a reply is warranted, using OpenAI's GPT models.</li>
+</ul>
+<blockquote>
+<p>NOTE: This repo is in a very early stage.</p>
 </blockquote>
-<a id="md:developing" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Developing<a href="#md:developing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="bash"><span class="hl-0">nvm</span><span class="hl-1"> </span><span class="hl-2">use</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1"> </span><span class="hl-3">-g</span><span class="hl-1"> </span><span class="hl-2">npm</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1"> </span><span class="hl-3">-g</span><span class="hl-1"> </span><span class="hl-2">pnpm</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">install</span>
+<hr>
+<a id="md:table-of-contents" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Table of Contents<a href="#md:table-of-contents" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li><a href="#md:features">Features</a></li>
+<li><a href="#md:architecture-overview">Architecture Overview</a></li>
+<li><a href="#md:prerequisites">Prerequisites</a></li>
+<li><a href="#md:installation">Installation</a></li>
+<li><a href="#md:setup">Setup</a></li>
+<li><a href="#md:usage">Usage</a>
+<ul>
+<li><a href="#md:running-the-tweet-generation-worker">Running the Tweet Generation Worker</a></li>
+<li><a href="#md:running-the-twitter-headless-search">Running the Twitter Headless Search</a></li>
+</ul>
+</li>
+<li><a href="#md:configuration">Configuration</a>
+<ul>
+<li><a href="#md:global">Global</a></li>
+<li><a href="#md:worker">Worker</a></li>
+</ul>
+</li>
+<li><a href="#md:deployment">Deployment</a></li>
+<li><a href="#md:development">Development</a></li>
+<li><a href="#md:notes">Notes</a></li>
+<li><a href="#md:contributing">Contributing</a></li>
+<li><a href="#md:license">License</a></li>
+</ul>
+<hr>
+<a id="md:features" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Features<a href="#md:features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li><strong>Automated Tweet Generation</strong>: Uses OpenAI's GPT models to generate tweets based on predefined configurations, including account descriptions and suggested hashtags.</li>
+<li><strong>Automated Replies to Tweets</strong>: Searches <a href="http://X.com" target="_blank" class="external">X.com</a> for tweets based on specified queries, analyzes them using GPT to determine if a reply is warranted, and replies accordingly.</li>
+<li><strong>Selenium Integration</strong>: Utilizes Selenium to automate browser interactions for functionalities not available through the X API.</li>
+</ul>
+<hr>
+<a id="md:architecture-overview" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Architecture Overview<a href="#md:architecture-overview" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The project consists of two main components:</p>
+<ol>
+<li>
+<p><strong>Tweet Generation Worker</strong>: Generates tweets using OpenAI's GPT models and publishes them via the X API.</p>
+</li>
+<li>
+<p><strong>Twitter Headless Search</strong>: Uses Selenium to automate a browser session to log into <a href="http://X.com" target="_blank" class="external">X.com</a>, perform search queries, and interact with tweets based on GPT analysis.</p>
+</li>
+</ol>
+<p>Due to limitations in the X API (no free-tier access for certain functionalities), Selenium is used to simulate user interactions where necessary.</p>
+<hr>
+<a id="md:prerequisites" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Prerequisites<a href="#md:prerequisites" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li><strong>Node.js</strong>: Version &gt;=16.0.0 (<strong>v23.0.0</strong> is set in <code>.nvmrc</code> and recommended)</li>
+<li><strong>npm</strong>: Version &gt;=6.0.0</li>
+<li><strong>pnpm</strong>: Installed globally (<code>npm install -g pnpm</code>)</li>
+<li><strong>OpenAI API Key</strong>: Required for accessing OpenAI's GPT models.</li>
+<li><strong>X API Credentials</strong>: Necessary for publishing tweets and interacting via the API.</li>
+<li><strong>Selenium WebDriver</strong>: For automating browser interactions (e.g., ChromeDriver).</li>
+<li><strong>nvm</strong>: Node Version Manager (optional, but recommended for managing Node.js versions).</li>
+</ul>
+<hr>
+<a id="md:installation" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Installation<a href="#md:installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Clone the repository and install dependencies:</p>
+<pre><code class="bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">clone</span><span class="hl-1"> </span><span class="hl-2">https://github.com/f3rno64/gpt-x-actor.git</span><br/><span class="hl-0">cd</span><span class="hl-1"> </span><span class="hl-2">gpt-x-actor</span>
 </code><button type="button">Copy</button></pre>
 
-<a id="md:running" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Running<a href="#md:running" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run:main:tweet-gen-worker</span>
+<a id="md:setup" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Setup<a href="#md:setup" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>If you’re using nvm, switch to the required Node.js version:</p>
+<pre><code class="bash"><span class="hl-0">nvm</span><span class="hl-1"> </span><span class="hl-2">use</span>
 </code><button type="button">Copy</button></pre>
 
-<a id="md:deploying" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Deploying<a href="#md:deploying" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>For now, cronjobs are the preferred way to schedule execution of the worker:</p>
-<pre><code><span class="hl-1">*/</span><span class="hl-4">30</span><span class="hl-1"> * * * * </span><span class="hl-5">sleep</span><span class="hl-1"> </span><span class="hl-5">$</span><span class="hl-1">{</span><span class="hl-6">RANDOM</span><span class="hl-1">:</span><span class="hl-4">0</span><span class="hl-1">:</span><span class="hl-4">2</span><span class="hl-1">}</span><span class="hl-5">m</span><span class="hl-1">; </span><span class="hl-3">export</span><span class="hl-1"> </span><span class="hl-7">WORKER_CONFIG_PATH</span><span class="hl-1">=/</span><span class="hl-5">opt</span><span class="hl-1">/</span><span class="hl-5">gpt</span><span class="hl-1">-</span><span class="hl-5">x</span><span class="hl-1">-</span><span class="hl-5">actor</span><span class="hl-1">/</span><span class="hl-5">worker_configs</span><span class="hl-1">/</span><span class="hl-7">WORKER_CONFIG_NAME</span><span class="hl-1">.</span><span class="hl-5">json</span><span class="hl-1"> &amp;&amp; . /</span><span class="hl-5">opt</span><span class="hl-1">/</span><span class="hl-5">gpt</span><span class="hl-1">-</span><span class="hl-5">x</span><span class="hl-1">-</span><span class="hl-5">actor</span><span class="hl-1">/</span><span class="hl-5">scripts</span><span class="hl-1">/</span><span class="hl-5">cron</span><span class="hl-1">.</span><span class="hl-5">env</span><span class="hl-1">.</span><span class="hl-5">sh</span><span class="hl-1"> &amp;&amp; /</span><span class="hl-5">opt</span><span class="hl-1">/</span><span class="hl-5">gpt</span><span class="hl-1">-</span><span class="hl-5">x</span><span class="hl-1">-</span><span class="hl-5">actor</span><span class="hl-1">/</span><span class="hl-5">scripts</span><span class="hl-1">/</span><span class="hl-7">WORKER</span><span class="hl-1">.</span><span class="hl-5">sh</span><span class="hl-1"> &gt;&gt; /</span><span class="hl-5">opt</span><span class="hl-1">/</span><span class="hl-5">gpt</span><span class="hl-1">-</span><span class="hl-5">x</span><span class="hl-1">-</span><span class="hl-5">actor</span><span class="hl-1">/</span><span class="hl-5">logs</span><span class="hl-1">/</span><span class="hl-7">WORKER</span><span class="hl-1">.</span><span class="hl-5">log</span><span class="hl-1"> </span><span class="hl-4">2</span><span class="hl-1">&gt;&amp;</span><span class="hl-4">1</span>
-</code><button>Copy</button></pre>
+<p>Install dependencies:</p>
+<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-3">-g</span><span class="hl-1"> </span><span class="hl-2">npm</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-3">-g</span><span class="hl-1"> </span><span class="hl-2">pnpm</span><br/><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">install</span>
+</code><button type="button">Copy</button></pre>
 
-</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:gpt-x-actor---gpt-autonomous-actor-for-x"><span>gpt-<wbr/>x-<wbr/>actor -<wbr/> GPT <wbr/>Autonomous <wbr/>Actor for X</span></a><ul><li><a href="#md:developing"><span>Developing</span></a></li><li><a href="#md:running"><span>Running</span></a></li><li><a href="#md:deploying"><span>Deploying</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>@f3rno64/gpt-x-actor</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer></footer><div class="overlay"></div></body></html>
+<p>Build the Project:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">build</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:usage" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Usage<a href="#md:usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><a id="md:running-the-tweet-generation-worker" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Running the Tweet Generation Worker<a href="#md:running-the-tweet-generation-worker" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>The tweet generation worker generates tweets based on a specified configuration and publishes them via the X API.</p>
+<p>To run the worker:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run:main:tweet-gen-worker</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Alternatively, you can directly run the script:</p>
+<pre><code class="bash"><span class="hl-0">ts-node</span><span class="hl-1"> </span><span class="hl-3">-r</span><span class="hl-1"> </span><span class="hl-2">dotenv/config</span><span class="hl-1"> </span><span class="hl-2">src/main/tweet_gen_worker.ts</span>
+</code><button type="button">Copy</button></pre>
+
+<p>For configuration, see the <a href="#md:worker"><strong>Configuration - Worker</strong></a> section below.</p>
+<a id="md:running-the-twitter-headless-search" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Running the Twitter Headless Search<a href="#md:running-the-twitter-headless-search" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>This script uses Selenium to automate browser interactions with <a href="http://X.com" target="_blank" class="external">X.com</a>, performing search queries and replying to tweets.</p>
+<p>To run the script:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">run:main:twitter-headless-search</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Alternatively:</p>
+<pre><code class="bash"><span class="hl-0">ts-node</span><span class="hl-1"> </span><span class="hl-3">-r</span><span class="hl-1"> </span><span class="hl-2">dotenv/config</span><span class="hl-1"> </span><span class="hl-2">src/main/twitter_headless_search.ts</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:configuration" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Configuration<a href="#md:configuration" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>There are two levels of configuration available for the workers:</p>
+<a id="md:global" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Global<a href="#md:global" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>All values in <code>.env</code> are loaded first into <code>process.env</code> by the
+<a href="https://www.npmjs.com/package/dotenv" target="_blank" class="external"><code>dotenv</code></a> library. These values are
+overriden by any matching keys in the worker configuration.</p>
+<a id="md:worker" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Worker<a href="#md:worker" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>To ease worker operation when utilising multiple accounts, the account
+credentials (API key, secret, optionally bearer, etc.) and all other environment
+variables are provided as a JSON object in the configuration JSON within
+<a href="./worker_configs/"><code>worker_configs/</code></a>.</p>
+<p>Therefore, something like the <code>OPENAI_API_KEY</code> can live in <code>.env</code>, whereas an X
+accounts' credentials and prompt configuration might be in
+<code>worker_configs/SomeXUsername-worker-role.json</code>.</p>
+<p>For a tweet generator config such as <code>worker_configs/ParodyUser-joke.json</code> that
+generates jokes for a parody account, the JSON might look like this:</p>
+<pre><code class="json"><span class="hl-1">{</span><br/><span class="hl-1">    </span><span class="hl-4">&quot;TWITTER_API_KEY&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;...&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">&quot;TWITTER_API_SECRET&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;...&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">&quot;TWITTER_ACCESS_TOKEN&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;...&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">&quot;TWITTER_ACCESS_TOKEN_SECRET&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;...&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">&quot;TWITTER_CLIENT_ID&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;...&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">&quot;TWITTER_CLIENT_SECRET&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;...&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">&quot;ACCOUNT_INFORMATION&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;A parody account that writes jokes and generally too-funny content.&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">&quot;INSTRUCTIONS&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;Write a joke about something surprisingly relevant but yet mysteriously missing from our Zeitgeist.&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">&quot;HASHTAG_SUGGESTIONS&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;#unexpected #jokes #parody&quot;</span><br/><span class="hl-1">}</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:deployment" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Deployment<a href="#md:deployment" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>For continuous operation, you can schedule the scripts to run at intervals using cronjobs.</p>
+<p>Scheduling with Cron</p>
+<p>Add the following entry to your crontab to run the worker every 30 minutes:</p>
+<pre><code class="cron">*/30 * * * * sleep $((RANDOM % 120)); export WORKER_CONFIG_PATH=/opt/gpt-x-actor/worker_configs/your_worker_config.json && . /opt/gpt-x-actor/scripts/cron.env.sh && /opt/gpt-x-actor/scripts/tweet_gen_worker.sh >> /opt/gpt-x-actor/logs/tweet_gen_worker.log 2>&1
+</code><button type="button">Copy</button></pre>
+
+<p>This cronjob:</p>
+<ul>
+<li>Runs every 30 minutes.</li>
+<li>Introduces a random sleep delay up to 2 minutes to avoid predictable patterns.</li>
+<li>Sets the <code>WORKER_CONFIG_PATH</code> environment variable to point to your worker configuration.</li>
+<li>Sources environment variables from <a href="http://cron.env.sh" target="_blank" class="external">cron.env.sh</a>.</li>
+<li>Executes the worker script and logs output.</li>
+</ul>
+<a id="md:development" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Development<a href="#md:development" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><a id="md:setting-up-the-development-environment" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Setting Up the Development Environment<a href="#md:setting-up-the-development-environment" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Clone the repository:</p>
+<pre><code class="bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">clone</span><span class="hl-1"> </span><span class="hl-2">https://github.com/f3rno64/gpt-x-actor.git</span><br/><span class="hl-0">cd</span><span class="hl-1"> </span><span class="hl-2">gpt-x-actor</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:switch-to-the-correct-node-version" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Switch to the Correct Node Version<a href="#md:switch-to-the-correct-node-version" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><pre><code class="bash"><span class="hl-0">nvm</span><span class="hl-1"> </span><span class="hl-2">use</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Install dependencies:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">install</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Build the Project:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">build</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:running-tests" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Running Tests<a href="#md:running-tests" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Currently, test scripts are not specified, but you can add tests using Vitest.</p>
+<a id="md:linting-and-formatting" class="tsd-anchor"></a><h4 class="tsd-anchor-link">Linting and Formatting<a href="#md:linting-and-formatting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4><p>Lint code:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">lint</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Fix lint issues:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">lint:fix</span>
+</code><button type="button">Copy</button></pre>
+
+<p>Format code:</p>
+<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">format</span>
+</code><button type="button">Copy</button></pre>
+
+<a id="md:notes" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Notes<a href="#md:notes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><ul>
+<li>Selenium Usage: Some functionalities are implemented using Selenium because <a href="http://X.com" target="_blank" class="external">X.com</a> does not offer free-tier API access for those features.</li>
+<li>Ethical Considerations: Ensure that the usage of this tool complies with OpenAI’s and <a href="http://X.com" target="_blank" class="external">X.com</a>’s terms of service and policies.</li>
+<li>Rate Limits: Be mindful of API rate limits when running the scripts to avoid being rate-limited or banned.</li>
+</ul>
+<a id="md:contributing" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Contributing<a href="#md:contributing" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Contributions are welcome! Please follow these steps:</p>
+<ol>
+<li>Fork the Repository.</li>
+<li>Create a Feature Branch:</li>
+</ol>
+<pre><code class="bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">checkout</span><span class="hl-1"> </span><span class="hl-3">-b</span><span class="hl-1"> </span><span class="hl-2">feature/your-feature-name</span>
+</code><button type="button">Copy</button></pre>
+
+<ol start="3">
+<li>Commit Your Changes:</li>
+</ol>
+<pre><code class="bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">commit</span><span class="hl-1"> </span><span class="hl-3">-m</span><span class="hl-1"> </span><span class="hl-2">&#39;Add new feature&#39;</span>
+</code><button type="button">Copy</button></pre>
+
+<ol start="4">
+<li>Push to the Branch:</li>
+</ol>
+<pre><code class="bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">push</span><span class="hl-1"> </span><span class="hl-2">origin</span><span class="hl-1"> </span><span class="hl-2">feature/your-feature-name</span>
+</code><button type="button">Copy</button></pre>
+
+<ol start="5">
+<li>Open a Pull Request.</li>
+</ol>
+<a id="md:license" class="tsd-anchor"></a><h2 class="tsd-anchor-link">License<a href="#md:license" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>This project is licensed under the MIT License - see the <a href="/LICENSE.md"><code>LICENSE.md</code></a> file for details.</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:gpt-x-actor---🤖-gpt-autonomous-actor-for-x-twitter"><span>GPT-<wbr/>X-<wbr/>Actor -<wbr/> 🤖 GPT <wbr/>Autonomous <wbr/>Actor for <wbr/>X (<wbr/>Twitter)</span></a><ul><li><a href="#md:table-of-contents"><span>Table of <wbr/>Contents</span></a></li><li><a href="#md:features"><span>Features</span></a></li><li><a href="#md:architecture-overview"><span>Architecture <wbr/>Overview</span></a></li><li><a href="#md:prerequisites"><span>Prerequisites</span></a></li><li><a href="#md:installation"><span>Installation</span></a></li><li><a href="#md:setup"><span>Setup</span></a></li><li><a href="#md:usage"><span>Usage</span></a></li><li><ul><li><a href="#md:running-the-tweet-generation-worker"><span>Running the <wbr/>Tweet <wbr/>Generation <wbr/>Worker</span></a></li><li><a href="#md:running-the-twitter-headless-search"><span>Running the <wbr/>Twitter <wbr/>Headless <wbr/>Search</span></a></li></ul></li><li><a href="#md:configuration"><span>Configuration</span></a></li><li><ul><li><a href="#md:global"><span>Global</span></a></li><li><a href="#md:worker"><span>Worker</span></a></li></ul></li><li><a href="#md:deployment"><span>Deployment</span></a></li><li><a href="#md:development"><span>Development</span></a></li><li><ul><li><a href="#md:setting-up-the-development-environment"><span>Setting <wbr/>Up the <wbr/>Development <wbr/>Environment</span></a></li><li><a href="#md:switch-to-the-correct-node-version"><span>Switch to the <wbr/>Correct <wbr/>Node <wbr/>Version</span></a></li><li><a href="#md:running-tests"><span>Running <wbr/>Tests</span></a></li><li><ul><li><a href="#md:linting-and-formatting"><span>Linting and <wbr/>Formatting</span></a></li></ul></li><li><a href="#md:notes"><span>Notes</span></a></li></ul></li><li><a href="#md:contributing"><span>Contributing</span></a></li><li><a href="#md:license"><span>License</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>gpt-x-actor</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer></footer><div class="overlay"></div></body></html>
