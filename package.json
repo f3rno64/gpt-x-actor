@@ -1,5 +1,5 @@
 {
-  "name": "@f3rno64/gpt-x-actor",
+  "name": "gpt-x-actor",
   "version": "0.0.1",
   "private": true,
   "description": "A Node.JS service that generates tweets via OpenAI and publishes them automatically.",
