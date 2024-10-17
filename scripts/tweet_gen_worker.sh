@@ -8,5 +8,5 @@ if [ -z "$WORKER_CONFIG_PATH" ]; then
     exit 1
 fi
 
-export $(cat "$DIR/.env" | xargs) && $(which node) "$DIR/dist/main/tweet_gen_worker.js"
+export $(cat "$DIR/.env" | sed 's/=\(.*\)/="\1"/' | xargs -d '\n') && $(which node) "$DIR/dist/main/tweet_gen_worker.js"
 echo "Execution finished at $(date)" >> "$LOG_DIR/tweet_gen_worker.exec.log"
