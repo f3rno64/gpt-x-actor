@@ -54,7 +54,8 @@
     "test": "NODE_PATH=./src NODE_ENV=test vitest",
     "update-deps": "updates -u -g -c",
     "update-version": "standard-version -a",
-    "run:main:tweet-gen-worker": "ts-node -r dotenv/config src/main/tweet_gen_worker.ts"
+    "run:main:tweet-gen-worker": "ts-node -r dotenv/config src/main/tweet_gen_worker.ts",
+    "run:main:twitter-headless-search": "ts-node -r dotenv/config src/main/twitter_headless_search.ts"
   },
   "dependencies": {
     "axios": "^1.7.7",
