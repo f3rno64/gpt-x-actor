@@ -1,6 +1,6 @@
 {
   "name": "gpt-x-actor",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Node.JS service that generates tweets via OpenAI and publishes them automatically.",
   "keywords": [
     "typescript",
@@ -54,6 +54,7 @@
     "update-deps": "updates -u -g -c",
     "update-version": "standard-version -a",
     "run:main:tweet-gen-worker": "ts-node -r dotenv/config src/main/tweet_gen_worker.ts",
+    "run:main:asma-twitter": "node dist/main/asma_twitter.js",
     "run:main:twitter-headless-search": "ts-node -r dotenv/config src/main/twitter_headless_search.ts"
   },
   "dependencies": {
@@ -92,7 +93,7 @@
     "@types/twit": "^2.2.35",
     "@typescript-eslint/eslint-plugin": "^8.9.0",
     "@typescript-eslint/parser": "^8.9.0",
-    "eslint": "^9.12.0",
+    "eslint": "^8.0.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-github": "^5.0.2",
     "eslint-plugin-immutable": "^1.0.0",

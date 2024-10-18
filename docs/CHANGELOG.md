@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.2 (2024-10-17)
+
+
+### Features
+
+* add DB and lastTweetedAtMs field in DB. ([b0e7eb0](https://github.com/f3rno64/gpt-x-actor/commit/b0e7eb08a708620c04ba1313280d0a545204839d))
+* add worker configs for autonomous exec. ([8834dfa](https://github.com/f3rno64/gpt-x-actor/commit/8834dfa25465b7cda064a967e2645ea48705f267))
+* build & format ([3b6cacc](https://github.com/f3rno64/gpt-x-actor/commit/3b6cacca883287b7729c5f4a357815631c4b4dec))
+* flesh out README.md, update manifest ([bfbf6fa](https://github.com/f3rno64/gpt-x-actor/commit/bfbf6faa94e5520e981749f4fe245a8e7aa0f3c7))
+* initial commit. ([0d8e832](https://github.com/f3rno64/gpt-x-actor/commit/0d8e832584f92d468bd41db76764dd8fb2a58ef0))
+* populate README.md, add .nvmrc ([d96e703](https://github.com/f3rno64/gpt-x-actor/commit/d96e70357c5cd900b7dcca3b3e990bc41c7dffdf))
+* track worker completion timestamps. ([9c8e73a](https://github.com/f3rno64/gpt-x-actor/commit/9c8e73a648533e3bbc459246a98796f19f1dfc49))
+
+
+### Bug Fixes
+
+* add data dir to gitignore ([fde3602](https://github.com/f3rno64/gpt-x-actor/commit/fde360212d7aa0b927fec4069fbb1a2f888e4f62))
+* do not include hashtags in tweet gen output. ([9a3ac8d](https://github.com/f3rno64/gpt-x-actor/commit/9a3ac8d2b2b865b6f7684a60befef9afb2b4d45a))
+* handlebars template endif. ([c7158e2](https://github.com/f3rno64/gpt-x-actor/commit/c7158e24bac7af0198f586e2f0424fd2c6910d7f))
+* handlebars template endif. ([e0cfd48](https://github.com/f3rno64/gpt-x-actor/commit/e0cfd4819f668a01b40c160b7c094a8f33fe3fdf))
+* rm private flag from manifest ([30ed04e](https://github.com/f3rno64/gpt-x-actor/commit/30ed04ec4142556768aaf68befdf83630c1d5aac))
+
 ### [0.0.8](https://github.com/f3rno64/node-ts-lib-template/compare/v0.0.7...v0.0.8) (2024-02-12)
 
 
